@@ -4,17 +4,23 @@
 
 **Dataset and data handling:**
 -results.csv: past international match results, with winner label.
+
 -fixtures.csv: scheduled matches in the tournament.
+
 -icc_rankings.csv: team rankings used to add positional features (even though current code mainly uses one‑hot teams).
 
 **Preprocessing:**
 -Filter to World Cup teams.
+
 -Drop irrelevant columns (date, Margin, Ground).
+
 -One‑hot encode Team_1 and Team_2 into binary features.
 
 **Approach:**
 -Train/test split with train_test_split (70/30).
+
 -Logistic regression as baseline classifier.
+
 -Generate predictions for league stage, then semi‑finals and final via predict_result function that re‑uses the same model.
 
 **Results:**
@@ -24,20 +30,30 @@ Training accuracy and testing accuracy printed by the script.
 
 **How to run:**
 *Local-*
+
 bash
+
 python -m venv venv
+
 source venv/bin/activate  # or venv\Scripts\activate on Windows
+
 pip install -r requirements.txt
 
 cd src
+
 python prediction.py
+
 This should print training/testing accuracy plus winners for each fixture, semi‑final, and final.
 
 *Colab*
 -Upload the repo to GitHub.
+
 -Create a Colab notebook that:
+
 !git clone <repo-url>
+
 cd into the repo and pip install -r requirements.txt.
+
 Runs the core parts of prediction.py inline.
 
 ## Traning accuracy:  0.7216
