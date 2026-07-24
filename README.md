@@ -1,60 +1,49 @@
 # Cricket Match Winner Prediction for the World Cup 2019
-# Problem:
-*Predict the winner of cricket matches (World Cup 2019) using team identities and ICC rankings, then simulate league, semi‑final, and final outcomes.*
 
-**Dataset and data handling:**
--results.csv: past international match results, with winner label.
+## 📌 Problem Statement
+Predict the winner of cricket matches for the World Cup 2019 using team identities and ICC rankings, then simulate league, semi-final, and final outcomes.
 
--fixtures.csv: scheduled matches in the tournament.
+---
 
--icc_rankings.csv: team rankings used to add positional features (even though current code mainly uses one‑hot teams).
+## 📁 Dataset & Data Handling
+* **`results.csv`**: Past international match results with winner labels.
+* **`fixtures.csv`**: Scheduled matches in the tournament.
+* **`icc_rankings.csv`**: Team rankings used to add positional features.
 
-**Preprocessing:**
--Filter to World Cup teams.
+---
 
--Drop irrelevant columns (date, Margin, Ground).
+## 🛠 Preprocessing & Approach
+* **Preprocessing**:
+  * Filter to World Cup teams.
+  * Drop irrelevant columns (`date`, `Margin`, `Ground`).
+  * One-hot encode `Team_1` and `Team_2` into binary features.
+* **Approach**:
+  * Train/test split using `train_test_split` (70/30).
+  * Logistic Regression as baseline classifier.
+  * Generate predictions for league stage, semi-finals, and finals via `predict_result` function.
 
--One‑hot encode Team_1 and Team_2 into binary features.
+---
 
-**Approach:**
--Train/test split with train_test_split (70/30).
+## 📊 Results
+* Training accuracy and testing accuracy are printed by the script.
+* *Note: Training accuracy higher than testing accuracy suggests some overfitting due to small dataset size and simple model.*
 
--Logistic regression as baseline classifier.
+---
 
--Generate predictions for league stage, then semi‑finals and final via predict_result function that re‑uses the same model.
+## 🚀 How to Run
 
-**Results:**
-Training accuracy and testing accuracy printed by the script.
-
-*training > testing suggests some overfitting; data is small and model is simple.*
-
-**How to run:**
-*Local-*
-
-bash
-
+### Local Setup
+```bash
+# Set up virtual environment
 python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-source venv/bin/activate  # or venv\Scripts\activate on Windows
-
+# Install dependencies
 pip install -r requirements.txt
 
+# Run prediction script
 cd src
-
 python prediction.py
-
-This should print training/testing accuracy plus winners for each fixture, semi‑final, and final.
-
-*Colab*
--Upload the repo to GitHub.
-
--Create a Colab notebook that:
-
-!git clone <repo-url>
-
-cd into the repo and pip install -r requirements.txt.
-
-Runs the core parts of prediction.py inline.
 
 ## Traning accuracy:  0.7216
 ## Testing accuracy:  0.587360594795539
