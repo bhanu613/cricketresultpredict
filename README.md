@@ -1,14 +1,48 @@
-# cricketresultpredict
-SPORTS PREDICTION SYSTEM
-AI Project Using Python
-• Library used:numPy, pandas, matplotlib, sklearn, seaborn IDE:PyCharm
-• A project to predict winners of cricket matches, margin of wins, score,
-ranking and in turn tournament winner; steps used : importing, reading,
-building model, predicting. Algorithm used is logisitc regression,
-technique : probability.
+# Cricket Match Winner Prediction for the World Cup 2019
+# Problem:
+*Predict the winner of cricket matches (World Cup 2019) using team identities and ICC rankings, then simulate league, semi‑final, and final outcomes.*
 
-Traning accuracy:  0.7216
-Testing accuracy:  0.587360594795539
+**Dataset and data handling:**
+-results.csv: past international match results, with winner label.
+-fixtures.csv: scheduled matches in the tournament.
+-icc_rankings.csv: team rankings used to add positional features (even though current code mainly uses one‑hot teams).
+
+**Preprocessing:**
+-Filter to World Cup teams.
+-Drop irrelevant columns (date, Margin, Ground).
+-One‑hot encode Team_1 and Team_2 into binary features.
+
+**Approach:**
+-Train/test split with train_test_split (70/30).
+-Logistic regression as baseline classifier.
+-Generate predictions for league stage, then semi‑finals and final via predict_result function that re‑uses the same model.
+
+**Results:**
+Training accuracy and testing accuracy printed by the script.
+
+*training > testing suggests some overfitting; data is small and model is simple.*
+
+**How to run:**
+*Local-*
+bash
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+
+cd src
+python prediction.py
+This should print training/testing accuracy plus winners for each fixture, semi‑final, and final.
+
+*Colab*
+-Upload the repo to GitHub.
+-Create a Colab notebook that:
+!git clone <repo-url>
+cd into the repo and pip install -r requirements.txt.
+Runs the core parts of prediction.py inline.
+
+## Traning accuracy:  0.7216
+## Testing accuracy:  0.587360594795539
+
 ![image](https://user-images.githubusercontent.com/57340784/206966014-2cef8d87-ec77-4f47-8e52-3bcc4d4e6350.png)
 
 ![image](https://user-images.githubusercontent.com/57340784/205433867-205b110c-e00f-4fbb-ad43-48ef7efd4fd7.png)
