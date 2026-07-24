@@ -7,10 +7,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 
 
-world_cup = pd.read_csv('World Cup 2019 Dataset.csv')
-result = pd.read_csv('results.csv')
-fixtures = pd.read_csv('fixtures.csv')
-ranking = pd.read_csv('icc_rankings.csv')
+world_cup = pd.read_csv('data/World Cup 2019 Dataset.csv')
+result = pd.read_csv('data/results.csv')
+fixtures = pd.read_csv('data/fixtures.csv')
+ranking = pd.read_csv('data/icc_rankings.csv')
 
 
 india = result[(result['Team_1'] == 'India') | (result['Team_2'] == 'India')]
