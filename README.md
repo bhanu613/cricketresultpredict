@@ -34,7 +34,7 @@ Predict the winner of cricket matches for the World Cup 2019 using team identiti
 
 The historical results show how often each team wins in ODI matches used for this project:
 
-![Number of wins per team (historical results)](images/wins-per-team bar chart 2019.png)
+![Number of wins per team (historical results)](images/wins-per-team-bar-chart-2019.png)
 
 India, Australia, and Sri Lanka have the highest win counts, while emerging teams like Afghanistan and Bangladesh win less often. This provides context for the model’s predicted probabilities and tournament simulation.
 
@@ -48,9 +48,8 @@ India, Australia, and Sri Lanka have the highest win counts, while emerging team
 
 Future improvements:
 
-- Add richer features (venue, home/away, recent form, margin of victory).
-- Incorporate more recent match data from public cricket datasets (e.g. Cricsheet) and retrain the model.[web:88][web:95]
-- Evaluate alternative models (e.g. tree-based ensembles) and use cross-validation to better estimate generalization performance.[web:92][web:96]
+- Incorporate more recent match data from public cricket datasets (e.g. Cricsheet) and retrain the model.
+- Evaluate alternative models (e.g. tree-based ensembles) and use cross-validation to better estimate generalization performance.
 
 ## 🚀 How to Run
 
