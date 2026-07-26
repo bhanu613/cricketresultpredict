@@ -65,6 +65,7 @@ pip install -r requirements.txt
 # Run prediction script
 cd src
 python prediction.py
+```
 
 ## Tech stack
 
